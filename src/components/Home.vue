@@ -1,10 +1,6 @@
 <template>
   <div class="container-home">
     <img class="img-logo" :src="require('@/assets/mercy-logo-f.png')" alt="Background Image"/>
-    <div>    
-      <span class="text1">เว็บตรงแท้ อันดับ 1</span>
-      <br><b class="text2">✨การันตีผู้ใช้งานจริงนับล้านยูสเซอร์ ลูกค้าใหม่ เพิ่มอัตราการชนะ ทันที !!</b>
-    </div>
     <div class="button-container">
     <a href="https://lin.ee/knMX628" class="custom-button1">
         <i class="fas fa-user-plus"></i>  <!-- ไอคอนสมัครสมาชิก -->
@@ -22,118 +18,6 @@
     <span class="online-count">ออนไลน์ <span class="online-num" ref="onlineCountAll">{{ onlineCountAll }}</span> คน</span>
   </div>
   </div>
-
-    <span class="text4">🔥เปอร์เซ็นต์เกมแตกสูง</span>
-        <div class="card-container">
-    <!-- Card 1 -->
-    <div class="card">
-      <a href="https://lin.ee/knMX628">
-        <div class="card-description">
-          <img class="img-game1"/>
-          <!-- เพิ่มข้อความ "มาแรง" ที่มุมขวาบน -->
-          <div class="badge">HOT</div>
-          <div class="chance-status"><b>🔥โอกาส 87.68%</b></div>
-          <div class="online-status"><b ref="onlineCount1">🟢ออนไลน์ {{ onlineCount1 }}</b></div>
-        </div>
-    </a>
-  </div>
-    
-    <div class="card">
-      <a href="https://lin.ee/knMX628">
-        <div class="card-description">
-          <img class="img-game2"/>
-          <div class="badge">HOT</div>
-          <div class="chance-status"><b>🔥โอกาส 91.05%</b></div>
-        <div class="online-status"><b ref="onlineCount2">🟢ออนไลน์ {{ onlineCount2 }}</b></div>
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="https://lin.ee/knMX628">
-        <div class="card-description">
-          <img class="img-game3" />
-          <div class="badge">HOT</div>
-          <div class="chance-status"><b>🔥โอกาส 89.68%</b></div>
-        <div class="online-status"><b ref="onlineCount3">🟢ออนไลน์ {{ onlineCount3 }}</b></div>
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="https://lin.ee/knMX628">
-        <div class="card-description">
-          <img class="img-game4"/>
-          <div class="badge">HOT</div>
-          <div class="chance-status"><b>🔥โอกาส 85.56%</b></div>
-        <div class="online-status"><b ref="onlineCount4">🟢ออนไลน์ {{ onlineCount4 }}</b></div>
-        </div>
-      </a>
-    </div>
-
-    <div class="card">
-      <a href="https://lin.ee/knMX628">
-        <div class="card-description">
-          <img class="img-game5"/>
-          <div class="badge">HOT</div>
-          <div class="chance-status"><b>🔥โอกาส 92.11%</b></div>
-        <div class="online-status"><b ref="onlineCount5">🟢ออนไลน์ {{ onlineCount5 }}</b></div>
-        </div>
-        </a>
-    </div>
-
-    <div class="card">
-      <a href="https://lin.ee/knMX628">
-        <div class="card-description">
-          <img class="img-game6" />
-          <div class="badge">HOT</div>
-          <div class="chance-status"><b>🔥โอกาส 90.18%</b></div>
-        <div class="online-status"><b ref="onlineCount6">🟢ออนไลน์ {{ onlineCount6 }}</b></div>
-        </div>
-      </a>
-    </div>
-        </div>
- 
-    <div class="rank-payment">
-        <span class="text3">👑 อันดับแจ็กพอตแตก</span>
-    </div> 
-    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-      <div class="ranking-container" id="rankingContainer">
-          <!-- การ์ดจะถูกเพิ่มที่นี่โดย JavaScript -->
-      </div>
-    </div>  
-
-    <div class="rank-payment">
-        <span class="text3">🏆 อันดับการถอน</span>
-    </div> 
-    <div class="container2" id="container">
-    <!-- การ์ดจะถูกเพิ่มที่นี่โดย JavaScript -->
-  </div>     
-
-   <div class="rank-payment">
-        <span class="text3">🥰 รีวิวลูกค้า</span>
-    </div> 
-    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-      <div class="rw-container" id="rw-container"></div>
-    </div>
-  
-    <div class="slider-container">
-    <div class="slider" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
-      <div v-for="(slide, index) in slides" :key="index" class="slide">
-        <img :src="require(`@/assets/${slide.src}`)" :alt="slide.alt" />
-      </div>
-    </div>
-    <!-- Golden Dots -->
-    <div class="dots-container">
-      <div
-        v-for="(slide, index) in slides"
-        :key="index"
-        :class="['dot', { active: currentIndex === index }]"
-        @click="goToSlide(index)"
-      ></div>
-    </div>
-  </div>
-
   </div>
 </template>
 
