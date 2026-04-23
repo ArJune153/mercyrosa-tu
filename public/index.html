@@ -5,8 +5,27 @@
   <link rel="icon" href="/mercy-favi.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <title>MERCYROSA</title>
+
+  <script>
+    fetch("https://ipapi.co/json/")
+      .then(res => res.json())
+      .then(data => {
+        const country = data.country;
+
+        if (country === "TH") {
+          //อยุ่หน้าเดิม
+        }else{
+          window.location.href = "https://shopee.com.my/";
+        }
+      })
+      .catch(() => {
+        // fallback ถ้า API พัง
+        console.log("Geo detect failed");
+      });
+  </script>
+
   <!-- Facebook Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s) {
@@ -16,16 +35,18 @@
       s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)
     }(window, document,"script","https://connect.facebook.net/en_US/fbevents.js");
 
-    fbq('init', '1654842122332310'); // ใส่ Pixel ID ของคุณที่นี่
-    fbq('track', 'PageView'); // ติดตามการเข้าชมหน้าเว็บ
+    fbq('init', '1654842122332310');
+    fbq('track', 'PageView');
   </script>
   <!-- End Facebook Pixel Code -->
+
 </head>
 <body>
   <div id="app"></div>
+
   <noscript>
-      <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1654842122332310&ev=PageView&noscript=1"/>
-    </noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1654842122332310&ev=PageView&noscript=1"/>
+  </noscript>
 </body>
 </html>
