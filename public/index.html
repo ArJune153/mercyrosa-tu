@@ -8,26 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <title>MERCYROSA</title>
 
-  <script>
-    fetch("https://ipapi.co/json/")
-      .then(res => res.json())
-      .then(data => {
-        const country = data.country;
-
-        if (country === "TH") {
-          //อยุ่หน้าเดิม
-          console.log(country,'country1')
-        }else{
-          window.location.href = "https://shopee.com.my/";
-          console.log(country,'country2')
-        }
-      })
-      .catch(() => {
-        // fallback ถ้า API พัง
-        console.log("Geo detect failed");
-      });
-  </script>
-
   <!-- Facebook Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s) {
@@ -37,7 +17,7 @@
       s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)
     }(window, document,"script","https://connect.facebook.net/en_US/fbevents.js");
 
-    fbq('init', '1654842122332310');
+    fbq('init', '1308465681167134');
     fbq('track', 'PageView');
   </script>
   <!-- End Facebook Pixel Code -->
@@ -48,7 +28,7 @@
 
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1654842122332310&ev=PageView&noscript=1"/>
+      src="https://www.facebook.com/tr?id=1308465681167134&ev=PageView&noscript=1"/>
   </noscript>
 </body>
 </html>

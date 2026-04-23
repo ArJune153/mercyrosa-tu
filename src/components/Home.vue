@@ -34,98 +34,10 @@ export default {
       onlineCount5: "9874",
       onlineCount6: "13,254",
       onlineCountAll: "189,631",
-      slides: [
-        { src: 'certi.jpg', alt: 'Image 3' },
-        { src: 'photo_6228624588875613744_y.jpg', alt: 'Image 1' },
-        { src: 'photo_6228624588875613745_y.jpg', alt: 'Image 2' },      
-      ],
-      topUsersData : [
-      { userName: "rosaa01xx", amount: "150,000", timestamp: "31 ส.ค. 2568" },
-      { userName: "rosab89xx", amount: "130,500", timestamp: "31 ส.ค. 2568" },
-      { userName: "rosae11xx", amount: "95,200", timestamp: "31 ส.ค. 2568" },
-      { userName: "rosad04xx", amount: "83,000", timestamp: "31 ส.ค. 2568" },
-      { userName: "rosae87xx", amount: "82,000", timestamp: "31 ส.ค. 2568" },
-      { userName: "rosae35xx", amount: "78,000", timestamp: "31 ส.ค. 2568" },
-    ],
-    reviews : [
-      { user: "rosaj23xx", text: "เว็บนี้ใช้งานง่าย ถอนเงินไวมาก", img: "photo-2568-06-02-13-24-49.jpg" },
-      { user: "rosas16xx", text: "แตกหนักจนแฟนงง ว่าไปเอาเงินมาจากไหน", img: "photo-2568-06-21-13-38-31.jpg" },
-      { user: "rosae56xx", text: "ระบบดี ไม่มีสะดุดเลย", img: "photo-2568-06-02-13-11-47.jpg" },
-      { user: "rosax88xx", text: "โปรโมชั่นคุ้มสุด ๆ เลยครับ", img: "503804955-122126012606831043-7044484449309087338-n.jpg" },
-      { user: "rosao16xx", text: "เล่นง่าย ได้เงินจริง", img: "490506081-122124348278773654-1591748651281217225-n.jpg" },
-      { user: "rosad41xx", text: "แตกจริง! ไม่ต้องลุ้นเลย เงินเข้าไวสุด ๆ 💸", img: "533961598_1465905681078900_8473607776528464666_n.jpg" },
-      { user: "rosad41xx", text: "จากหลักร้อยเป็นหลักหมื่นในคืนเดียว ว้าว!", img: "464195162_2477566235772141_6809220135929060331_n.jpg" },
-      { user: "rosab71xx", text: "รองรับ TrueWallet ด้วย สะดวกมาก", img: "504143319_2219977065123389_83092695142278008_n.jpg" },
-      { user: "rosat94xx", text: "แนะนำเพื่อน ได้โบนัสด้วย", img: "492242625_668943662417215_4482917277835435921_n.jpg" },
-      { user: "rosal68xx", text: "ดีตรงที่มีภาษาไทยครบถ้วน", img: "518366934_736143816025493_1299983234092703859_n.jpg" },
-      { user: "rosat28xx", text: "ฝากปุ๊บเงินเข้าปั๊บ", img: "533084719_1116500603710911_5818853113959217185_n.jpg" },
-      { user: "rosao71xx", text: "แทบจะถอนทุกวัน ดีจริงๆเว็บนี้!", img: "277169807-3163265690584017-8353788208641286173-n.jpg" },
-      { user: "rosaj88xx", text: "ชอบมีไลฟ์สดบอลให้ดูฟรี", img: "432694438-933306371801755-6605376483802637949-n.jpg" },
-      { user: "rosaq38xx", text: "ทีมซัพพอร์ตดูแลดีมาก", img: "444482004_7798764536813604_3664008989486408448_n.md.jpg" },
-      { user: "rosaz65xx", text: "อัตราต่อรองแฟร์สุด ๆ", img: "499992981-543532548818863-8863283426458467040-n.jpg" },
-      { user: "rosaf86xx", text: "ถอนวันละพันทุกวัน แทบไม่ต้องทำงาน", img: "503202164-2075152429640793-785701917046162087-n.jpg" },
-    ],
     rwindex:0
     };
   },
   methods: {
-    createRankingCard(user, rank) {
-        const rankingContainer = document.getElementById("rankingContainer");
-
-        const card = document.createElement("div");
-        card.classList.add("ranking-card");
-
-        const speedClasses = ['fast-wave', 'medium-wave', 'slow-wave'];
-        const selectedSpeedClass = speedClasses[Math.floor(Math.random() * speedClasses.length)];
-        card.classList.add(selectedSpeedClass);
-
-        // --- สร้างวันที่ปัจจุบันเป็นภาษาไทย พร้อมเลข 0 ข้างหน้า ---
-        const now = new Date();
-        const day = now.getDate().toString().padStart(2, '0'); // ใส่ 0 ถ้าวัน < 10
-        const month = now.toLocaleDateString('th-TH', { month: 'short' });
-        const year = now.getFullYear() + 543; // แปลงเป็น พ.ศ.
-        const thaiDate = `${day} ${month} ${year}`;
-
-        card.innerHTML = `
-          <div class="card-details">
-            <div class="info-section">
-              <div class="user-name">ยูส: ${user.userName}</div>
-              <div class="user-transaction">ยอดถอน: <span class="amount">${user.amount}</span></div>
-              <div class="user-transaction">เวลา: ${thaiDate}</div>
-            </div>
-          </div>
-          <div class="rank-info" data-rank="${rank}">
-            <!-- จะแสดงหมายเลขอันดับที่นี่ -->
-          </div>
-        `;
-
-        rankingContainer.appendChild(card);
-
-        if (rankingContainer.children.length > 6) {
-          rankingContainer.removeChild(rankingContainer.firstElementChild);
-        }
-      },
-     animateNumber(refName, startValue, endValue, callback) {
-      let currentValue = startValue;
-      const step = Math.max(1, Math.ceil((endValue - startValue) / 20));
-
-      // ใช้ Vue.nextTick เพื่อให้มั่นใจว่า DOM ถูกเรนเดอร์แล้ว
-      this.$nextTick(() => {
-        const element = this.$refs[refName];
-
-        if (element) {
-          const interval = setInterval(() => {
-            currentValue += step;
-            if (currentValue >= endValue) {
-              clearInterval(interval);
-              currentValue = endValue;
-              if (callback) callback();
-            }
-            element.textContent = currentValue.toLocaleString();
-          }, 100);
-        }
-      });
-    },
     updateOnlineCount() {
       setInterval(() => {
         // แปลงค่ากลับเป็นตัวเลขก่อน
@@ -159,46 +71,8 @@ export default {
         this.animateNumber('onlineCountAll', parseInt(this.onlineCountAll.replace(/,/g, '')) || 0, countAll, () => {
           this.onlineCountAll = countAll.toLocaleString();
         });
-
-
     }, 3000); // อัปเดตทุกๆ 3 วินาที
-  },
-    nextSlide() {
-    if (this.slides && this.slides.length > 0) {  // ตรวจสอบว่า slides ไม่เป็น undefined และมีค่า
-      this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-    }
-  },
-  prevSlide() {
-    if (this.slides && this.slides.length > 0) {  // ตรวจสอบว่า slides ไม่เป็น undefined และมีค่า
-      this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
-    }
-  },
-  goToSlide(index) {
-    if (this.slides && this.slides.length > 0) {  // ตรวจสอบว่า slides ไม่เป็น undefined และมีค่า
-      this.currentIndex = index;
-    }
-  },
-  showCards() {
-      const rwcontainer = document.getElementById("rw-container");
-      rwcontainer.innerHTML = "";
-      for (let i = 0; i < 4; i++) {
-        const review = this.reviews[(this.rwindex + i) % this.reviews.length];
-        const card = document.createElement("div");
-        card.classList.add("rw-card");
-
-      card.innerHTML = `
-      <div class="rw-profile">
-        <img src="${require(`@/assets/${review.img}`)}" alt="${review.user}"/>
-        <b style="color:#FFD700">${review.user}</b>
-      </div>
-      <div class="rw-review-text">${review.text}</div>
-      <div class="rw-stars">★★★★★</div>
-    `;
-
-        rwcontainer.appendChild(card);
-      }
-      this.rwindex = (this.rwindex + 4) % this.reviews.length;
-    }
+  }
   },
   mounted() {
     this.updateOnlineCount();
