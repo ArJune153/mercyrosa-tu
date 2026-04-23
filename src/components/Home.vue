@@ -72,7 +72,28 @@ export default {
           this.onlineCountAll = countAll.toLocaleString();
         });
     }, 3000); // อัปเดตทุกๆ 3 วินาที
-  }
+  },
+  animateNumber(refName, startValue, endValue, callback) {
+      let currentValue = startValue;
+      const step = Math.max(1, Math.ceil((endValue - startValue) / 20));
+
+      // ใช้ Vue.nextTick เพื่อให้มั่นใจว่า DOM ถูกเรนเดอร์แล้ว
+      this.$nextTick(() => {
+        const element = this.$refs[refName];
+
+        if (element) {
+          const interval = setInterval(() => {
+            currentValue += step;
+            if (currentValue >= endValue) {
+              clearInterval(interval);
+              currentValue = endValue;
+              if (callback) callback();
+            }
+            element.textContent = currentValue.toLocaleString();
+          }, 100);
+        }
+      });
+    }
   },
   mounted() {
     this.updateOnlineCount();
