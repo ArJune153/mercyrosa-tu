@@ -12,12 +12,6 @@
     </a>
 </div>
 
-  <div class="video-section">
-  <video autoplay muted loop playsinline controls style="width: 100%; border-radius: 12px;">
-    <source :src="require('@/assets/TESTGAME.mp4')" type="video/mp4" />
-  </video>
-  </div>
-
     <div class="online-all">
   <div class="user-online-status">
     <i class="fas fa-circle online-icon"></i>
