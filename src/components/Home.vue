@@ -830,7 +830,6 @@ body {
     }
 
     .video-section {
-  margin-top: 20px;
   padding: 0 15px;
 }
 
@@ -842,7 +841,7 @@ body {
 /* 💻 คอม / tablet */
 @media (min-width: 768px) {
   .video-section video {
-    width: 50%;
+    width: 70% !important;
     display: block;
     margin: 0 auto; /* จัดกลาง */
   }
