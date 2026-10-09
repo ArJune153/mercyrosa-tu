@@ -1,12 +1,16 @@
 <template>
   <div class="container-home">
-    <img class="img-logo" :src="require('@/assets/mercy-logo-f.png')" alt="Background Image"/>
+    <img class="img-logo" :src="require('@/assets/Moji.png')" alt="Background Image"/>
+    <div>    
+      <span class="text1">เว็บตรงแท้ อันดับ 1</span>
+      <br><b class="text2">✨การันตีผู้ใช้งานจริงนับล้านยูสเซอร์ ลูกค้าใหม่ เพิ่มอัตราการชนะ ทันที !!</b>
+    </div>
     <div class="button-container">
-    <a href="https://lin.ee/knMX628" class="custom-button1">
+    <a href="https://lin.ee/56CerjRI" class="custom-button1">
         <i class="fas fa-user-plus"></i>  <!-- ไอคอนสมัครสมาชิก -->
         สมัครสมาชิก
     </a>
-    <a href="https://lin.ee/knMX628" class="custom-button2">
+    <a href="https://lin.ee/56CerjRI" class="custom-button2">
         <i class="fas fa-comments"></i>  <!-- ไอคอนติดต่อแอดมิน -->
         ติดต่อแอดมิน
     </a>
@@ -18,6 +22,118 @@
     <span class="online-count">ออนไลน์ <span class="online-num" ref="onlineCountAll">{{ onlineCountAll }}</span> คน</span>
   </div>
   </div>
+
+    <span class="text4">🔥เปอร์เซ็นต์เกมแตกสูง</span>
+        <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <a href="https://lin.ee/56CerjRI">
+        <div class="card-description">
+          <img class="img-game1"/>
+          <!-- เพิ่มข้อความ "มาแรง" ที่มุมขวาบน -->
+          <div class="badge">HOT</div>
+          <div class="chance-status"><b>🔥โอกาส 87.68%</b></div>
+          <div class="online-status"><b ref="onlineCount1">🟢ออนไลน์ {{ onlineCount1 }}</b></div>
+        </div>
+    </a>
+  </div>
+    
+    <div class="card">
+      <a href="https://lin.ee/56CerjRI">
+        <div class="card-description">
+          <img class="img-game2"/>
+          <div class="badge">HOT</div>
+          <div class="chance-status"><b>🔥โอกาส 91.05%</b></div>
+        <div class="online-status"><b ref="onlineCount2">🟢ออนไลน์ {{ onlineCount2 }}</b></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://lin.ee/56CerjRI">
+        <div class="card-description">
+          <img class="img-game3" />
+          <div class="badge">HOT</div>
+          <div class="chance-status"><b>🔥โอกาส 89.68%</b></div>
+        <div class="online-status"><b ref="onlineCount3">🟢ออนไลน์ {{ onlineCount3 }}</b></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://lin.ee/56CerjRI">
+        <div class="card-description">
+          <img class="img-game4"/>
+          <div class="badge">HOT</div>
+          <div class="chance-status"><b>🔥โอกาส 85.56%</b></div>
+        <div class="online-status"><b ref="onlineCount4">🟢ออนไลน์ {{ onlineCount4 }}</b></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://lin.ee/56CerjRI">
+        <div class="card-description">
+          <img class="img-game5"/>
+          <div class="badge">HOT</div>
+          <div class="chance-status"><b>🔥โอกาส 92.11%</b></div>
+        <div class="online-status"><b ref="onlineCount5">🟢ออนไลน์ {{ onlineCount5 }}</b></div>
+        </div>
+        </a>
+    </div>
+
+    <div class="card">
+      <a href="https://lin.ee/56CerjRI">
+        <div class="card-description">
+          <img class="img-game6" />
+          <div class="badge">HOT</div>
+          <div class="chance-status"><b>🔥โอกาส 90.18%</b></div>
+        <div class="online-status"><b ref="onlineCount6">🟢ออนไลน์ {{ onlineCount6 }}</b></div>
+        </div>
+      </a>
+    </div>
+        </div>
+ 
+    <div class="rank-payment">
+        <span class="text3">👑 อันดับแจ็กพอตแตก</span>
+    </div> 
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+      <div class="ranking-container" id="rankingContainer">
+          <!-- การ์ดจะถูกเพิ่มที่นี่โดย JavaScript -->
+      </div>
+    </div>  
+
+    <div class="rank-payment">
+        <span class="text3">🏆 อันดับการถอน</span>
+    </div> 
+    <div class="container2" id="container">
+    <!-- การ์ดจะถูกเพิ่มที่นี่โดย JavaScript -->
+  </div>     
+
+   <div class="rank-payment">
+        <span class="text3">🥰 รีวิวลูกค้า</span>
+    </div> 
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+      <div class="rw-container" id="rw-container"></div>
+    </div>
+  
+    <div class="slider-container">
+    <div class="slider" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
+      <div v-for="(slide, index) in slides" :key="index" class="slide">
+        <img :src="require(`@/assets/${slide.src}`)" :alt="slide.alt" />
+      </div>
+    </div>
+    <!-- Golden Dots -->
+    <div class="dots-container">
+      <div
+        v-for="(slide, index) in slides"
+        :key="index"
+        :class="['dot', { active: currentIndex === index }]"
+        @click="goToSlide(index)"
+      ></div>
+    </div>
+  </div>
+
   </div>
 </template>
 
@@ -34,10 +150,98 @@ export default {
       onlineCount5: "9874",
       onlineCount6: "13,254",
       onlineCountAll: "189,631",
+      slides: [
+        { src: 'certi.jpg', alt: 'Image 3' },
+        { src: 'photo_6228624588875613744_y.jpg', alt: 'Image 1' },
+        { src: 'photo_6228624588875613745_y.jpg', alt: 'Image 2' },      
+      ],
+      topUsersData : [
+      { userName: "mojia01xx", amount: "150,000", timestamp: "31 ส.ค. 2568" },
+      { userName: "mojib89xx", amount: "130,500", timestamp: "31 ส.ค. 2568" },
+      { userName: "mojie11xx", amount: "95,200", timestamp: "31 ส.ค. 2568" },
+      { userName: "mojid04xx", amount: "83,000", timestamp: "31 ส.ค. 2568" },
+      { userName: "mojie87xx", amount: "82,000", timestamp: "31 ส.ค. 2568" },
+      { userName: "mojie35xx", amount: "78,000", timestamp: "31 ส.ค. 2568" },
+    ],
+    reviews : [
+      { user: "mojij23xx", text: "เว็บนี้ใช้งานง่าย ถอนเงินไวมาก", img: "photo-2568-06-02-13-24-49.jpg" },
+      { user: "mojis16xx", text: "แตกหนักจนแฟนงง ว่าไปเอาเงินมาจากไหน", img: "photo-2568-06-21-13-38-31.jpg" },
+      { user: "mojie56xx", text: "ระบบดี ไม่มีสะดุดเลย", img: "photo-2568-06-02-13-11-47.jpg" },
+      { user: "mojix88xx", text: "โปรโมชั่นคุ้มสุด ๆ เลยครับ", img: "503804955-122126012606831043-7044484449309087338-n.jpg" },
+      { user: "mojio16xx", text: "เล่นง่าย ได้เงินจริง", img: "490506081-122124348278773654-1591748651281217225-n.jpg" },
+      { user: "mojid41xx", text: "แตกจริง! ไม่ต้องลุ้นเลย เงินเข้าไวสุด ๆ 💸", img: "533961598_1465905681078900_8473607776528464666_n.jpg" },
+      { user: "mojid41xx", text: "จากหลักร้อยเป็นหลักหมื่นในคืนเดียว ว้าว!", img: "464195162_2477566235772141_6809220135929060331_n.jpg" },
+      { user: "mojib71xx", text: "รองรับ TrueWallet ด้วย สะดวกมาก", img: "504143319_2219977065123389_83092695142278008_n.jpg" },
+      { user: "mojit94xx", text: "แนะนำเพื่อน ได้โบนัสด้วย", img: "492242625_668943662417215_4482917277835435921_n.jpg" },
+      { user: "mojil68xx", text: "ดีตรงที่มีภาษาไทยครบถ้วน", img: "518366934_736143816025493_1299983234092703859_n.jpg" },
+      { user: "mojit28xx", text: "ฝากปุ๊บเงินเข้าปั๊บ", img: "533084719_1116500603710911_5818853113959217185_n.jpg" },
+      { user: "mojio71xx", text: "แทบจะถอนทุกวัน ดีจริงๆเว็บนี้!", img: "277169807-3163265690584017-8353788208641286173-n.jpg" },
+      { user: "mojij88xx", text: "ชอบมีไลฟ์สดบอลให้ดูฟรี", img: "432694438-933306371801755-6605376483802637949-n.jpg" },
+      { user: "mojiq38xx", text: "ทีมซัพพอร์ตดูแลดีมาก", img: "444482004_7798764536813604_3664008989486408448_n.md.jpg" },
+      { user: "mojiz65xx", text: "อัตราต่อรองแฟร์สุด ๆ", img: "499992981-543532548818863-8863283426458467040-n.jpg" },
+      { user: "mojif86xx", text: "ถอนวันละพันทุกวัน แทบไม่ต้องทำงาน", img: "503202164-2075152429640793-785701917046162087-n.jpg" },
+    ],
     rwindex:0
     };
   },
   methods: {
+    createRankingCard(user, rank) {
+        const rankingContainer = document.getElementById("rankingContainer");
+
+        const card = document.createElement("div");
+        card.classList.add("ranking-card");
+
+        const speedClasses = ['fast-wave', 'medium-wave', 'slow-wave'];
+        const selectedSpeedClass = speedClasses[Math.floor(Math.random() * speedClasses.length)];
+        card.classList.add(selectedSpeedClass);
+
+        // --- สร้างวันที่ปัจจุบันเป็นภาษาไทย พร้อมเลข 0 ข้างหน้า ---
+        const now = new Date();
+        const day = now.getDate().toString().padStart(2, '0'); // ใส่ 0 ถ้าวัน < 10
+        const month = now.toLocaleDateString('th-TH', { month: 'short' });
+        const year = now.getFullYear() + 543; // แปลงเป็น พ.ศ.
+        const thaiDate = `${day} ${month} ${year}`;
+
+        card.innerHTML = `
+          <div class="card-details">
+            <div class="info-section">
+              <div class="user-name">ยูส: ${user.userName}</div>
+              <div class="user-transaction">ยอดถอน: <span class="amount">${user.amount}</span></div>
+              <div class="user-transaction">เวลา: ${thaiDate}</div>
+            </div>
+          </div>
+          <div class="rank-info" data-rank="${rank}">
+            <!-- จะแสดงหมายเลขอันดับที่นี่ -->
+          </div>
+        `;
+
+        rankingContainer.appendChild(card);
+
+        if (rankingContainer.children.length > 6) {
+          rankingContainer.removeChild(rankingContainer.firstElementChild);
+        }
+      },
+     animateNumber(refName, startValue, endValue, callback) {
+      let currentValue = startValue;
+      const step = Math.max(1, Math.ceil((endValue - startValue) / 20));
+
+      // ใช้ Vue.nextTick เพื่อให้มั่นใจว่า DOM ถูกเรนเดอร์แล้ว
+      this.$nextTick(() => {
+        const element = this.$refs[refName];
+
+        if (element) {
+          const interval = setInterval(() => {
+            currentValue += step;
+            if (currentValue >= endValue) {
+              clearInterval(interval);
+              currentValue = endValue;
+              if (callback) callback();
+            }
+            element.textContent = currentValue.toLocaleString();
+          }, 100);
+        }
+      });
+    },
     updateOnlineCount() {
       setInterval(() => {
         // แปลงค่ากลับเป็นตัวเลขก่อน
@@ -71,32 +275,162 @@ export default {
         this.animateNumber('onlineCountAll', parseInt(this.onlineCountAll.replace(/,/g, '')) || 0, countAll, () => {
           this.onlineCountAll = countAll.toLocaleString();
         });
+
+
     }, 3000); // อัปเดตทุกๆ 3 วินาที
   },
-  animateNumber(refName, startValue, endValue, callback) {
-      let currentValue = startValue;
-      const step = Math.max(1, Math.ceil((endValue - startValue) / 20));
+    nextSlide() {
+    if (this.slides && this.slides.length > 0) {  // ตรวจสอบว่า slides ไม่เป็น undefined และมีค่า
+      this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+    }
+  },
+  prevSlide() {
+    if (this.slides && this.slides.length > 0) {  // ตรวจสอบว่า slides ไม่เป็น undefined และมีค่า
+      this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+    }
+  },
+  goToSlide(index) {
+    if (this.slides && this.slides.length > 0) {  // ตรวจสอบว่า slides ไม่เป็น undefined และมีค่า
+      this.currentIndex = index;
+    }
+  },
+  showCards() {
+      const rwcontainer = document.getElementById("rw-container");
+      rwcontainer.innerHTML = "";
+      for (let i = 0; i < 4; i++) {
+        const review = this.reviews[(this.rwindex + i) % this.reviews.length];
+        const card = document.createElement("div");
+        card.classList.add("rw-card");
 
-      // ใช้ Vue.nextTick เพื่อให้มั่นใจว่า DOM ถูกเรนเดอร์แล้ว
-      this.$nextTick(() => {
-        const element = this.$refs[refName];
+      card.innerHTML = `
+      <div class="rw-profile">
+        <img src="${require(`@/assets/${review.img}`)}" alt="${review.user}"/>
+        <b style="color:#FFD700">${review.user}</b>
+      </div>
+      <div class="rw-review-text">${review.text}</div>
+      <div class="rw-stars">★★★★★</div>
+    `;
 
-        if (element) {
-          const interval = setInterval(() => {
-            currentValue += step;
-            if (currentValue >= endValue) {
-              clearInterval(interval);
-              currentValue = endValue;
-              if (callback) callback();
-            }
-            element.textContent = currentValue.toLocaleString();
-          }, 100);
-        }
-      });
+        rwcontainer.appendChild(card);
+      }
+      this.rwindex = (this.rwindex + 4) % this.reviews.length;
     }
   },
   mounted() {
+     this.topUsersData.forEach((user, index) => {
+      this.createRankingCard(user, index + 1);
+    });
+
     this.updateOnlineCount();
+
+    const bankLogos = [
+      "BAAC.png", "BAY.png", "BBL.png", 
+      "GSB.png", "KBANK.png", 
+      "KTB.png", "PromptPay.png", "SCB.png", 
+      "TTB.png", "TrueMoney.png", "UOB.png"
+    ];
+
+    function generateRandomData() {
+      const amounts = ["1,000", "2,000", "5,000", "6,000", "7,000", "8,000", "15,000", "1,500", "1,300", "1,800", "20,000", "15,000", "29,000", "3,320", "15,000", "15,000", "3,200", "2,300", "11,100", "13,000", "35,000", "50,800", "20,200", "31,100", "22,200", "12,300", "1,100"];
+      const randomAmountIndex = Math.floor(Math.random() * amounts.length);
+      const randomBankIndex = Math.floor(Math.random() * bankLogos.length);
+      const randomDigits = Math.floor(Math.random() * 100).toString().padStart(2, '0');
+      const randomChar = String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+      const user = `moji${randomChar}${randomDigits}xx`;
+
+      const now = new Date();
+
+      // อาร์เรย์ของชื่อเดือนภาษาไทย
+      const months = [
+        'ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.',
+        'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'
+      ];
+
+      // รูปแบบวันที่ที่ต้องการ
+      const day = now.getDate().toString().padStart(2, '0'); // วันที่
+      const month = months[now.getMonth()]; // ชื่อเดือนภาษาไทย
+      const year = (now.getFullYear() + 543); // ปีพุทธศักราช (บวก 543 เพื่อให้ได้ปี พ.ศ.)
+      const hours = now.getHours().toString().padStart(2, '0'); // ชั่วโมง
+      const minutes = now.getMinutes().toString().padStart(2, '0'); // นาที
+      const seconds = now.getSeconds().toString().padStart(2, '0'); // วินาที
+
+      const timestamp = `${day} ${month} ${year} ${hours}:${minutes}:${seconds}`; // ผลลัพธ์สุดท้าย
+
+      return {
+        user: user,
+        amount: amounts[randomAmountIndex],
+        timestamp: timestamp,
+        bankLogo: bankLogos[randomBankIndex]
+      };
+    }
+
+    function addCard(isLatest = true) {
+      const data = generateRandomData();
+      const container = document.getElementById("container");
+
+      const card = document.createElement("div");
+      card.classList.add("card-two");
+
+      const speedClasses = ['speed1', 'speed2', 'speed3'];
+      const randomSpeedClass = speedClasses[Math.floor(Math.random() * speedClasses.length)];
+      card.classList.add(randomSpeedClass);
+
+      card.innerHTML = `
+        <div class="card-left">
+          <div class="logo-section">
+            <img src="https://raw.githubusercontent.com/casperstack/thai-banks-logo/refs/heads/master/icons/${data.bankLogo}" alt="${data.bankLogo}" style="width: 40px; height: auto;">
+          </div>
+          <div class="info-section">
+            <div class="user-info">ยูส: <span class="amount">${data.user} </span></div>
+            <div class="transaction-info">ยอดถอน: <span class="amount">${data.amount} </span>บาท</div>
+            <div class="transaction-info">เวลา: <span class="amount">${data.timestamp} </span></div>
+          </div>
+        </div>
+        <div class="card-right">
+          <div id="status-icon" class="loading-icon"></div>
+          <div id="check-icon" class="check-icon material-icons">check_circle</div>
+          <div id="status-message" class="number">กำลังโอน</div>
+        </div>
+      `;
+
+      container.appendChild(card);
+
+      if (container.children.length > 5) {
+        container.removeChild(container.firstElementChild);
+      }
+
+      const statusMessage = card.querySelector("#status-message");
+      const loadingIcon = card.querySelector("#status-icon");
+      const checkIcon = card.querySelector("#check-icon");
+
+      if (isLatest) {
+        setTimeout(() => {
+          statusMessage.textContent = "โอนแล้ว";
+          loadingIcon.style.display = "none";
+          checkIcon.style.display = "inline-block";
+        }, 3000);
+      } else {
+        statusMessage.textContent = "โอนแล้ว";
+        loadingIcon.style.display = "none";
+        checkIcon.style.display = "inline-block";
+      }
+    }
+
+    function initializeCards() {
+      for (let i = 0; i < 5; i++) {
+        const isLatest = i === 4;
+        addCard(isLatest);
+      }
+    }
+
+    setInterval(this.nextSlide, 3000);
+
+    initializeCards();
+    setInterval(() => addCard(true), 5000);
+    
+    this.showCards();
+    setInterval(this.showCards, 6000);
+
   }
 };
 </script>
@@ -306,7 +640,12 @@ body {
 /* สไตล์สำหรับรูป */
 .img-logo {
   max-width: 70%;
-  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 1));
+}
+
+ @media (min-width: 500px) {
+  .img-logo{
+    width: 25%;
+  }
 }
 
 /* ข้อความที่กระพริบ */
@@ -822,5 +1161,4 @@ body {
         opacity: 1;
       }
     }
-
 </style>
