@@ -16,6 +16,12 @@
     </a>
 </div>
 
+    <div class="video-section"> 
+    <video autoplay muted loop playsinline controls style="width: 100%; border-radius: 12px;"> 
+      <source :src="require('@/assets/New_York_360p_compressed.mp4')" type="video/mp4" /> 
+    </video> 
+  </div>
+
     <div class="online-all">
   <div class="user-online-status">
     <i class="fas fa-circle online-icon"></i>
@@ -1161,4 +1167,22 @@ body {
         opacity: 1;
       }
     }
+
+    .video-section {
+  padding: 0 15px;
+}
+
+/* มือถือ (default) */
+.video-section video {
+  width: 100%;
+}
+
+/* 💻 คอม / tablet */
+@media (min-width: 768px) {
+  .video-section video {
+    width: 50% !important;
+    display: block;
+    margin: 0 auto; /* จัดกลาง */
+  }
+}
 </style>
